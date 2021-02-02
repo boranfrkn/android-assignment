@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/detailMenu"
+        android:icon="@drawable/details"
+        android:title="İlan Detayı" />
+    <item
+        android:id="@+id/descriptonMenu"
+        android:icon="@drawable/description"
+        android:title="Açıklama" />
+</menu>
