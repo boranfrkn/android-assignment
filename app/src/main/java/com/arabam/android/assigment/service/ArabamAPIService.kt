@@ -19,7 +19,7 @@ ArabamAPIService {
     fun getList(): Single<List<ListModel>> {
         return api.getList()
     }
-    fun getDetail(): Single<DetailModel>{
-        return api.getDetail()
+    fun getDetail(id: Int): Single<DetailModel>{
+        return api.getDetail(id)
     }
 }

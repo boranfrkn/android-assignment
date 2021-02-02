@@ -1,19 +1,19 @@
 package com.arabam.android.assigment.model
 
 data class DetailModel(
-    val category: CategoryDetail,
-    val date: String,
-    val dateFormatted: String,
-    val id: Int,
-    val location: LocationDetail,
-    val modelName: String,
-    val photos: List<String>,
-    val price: Int,
-    val priceFormatted: String,
-    val properties: List<PropertyDetail>,
-    val text: String,
-    val title: String,
-    val userInfo: UserInfo
+        val category: CategoryDetail,
+        val date: String,
+        val dateFormatted: String,
+        val id: Int,
+        val location: LocationDetail,
+        val modelName: String,
+        val photos: List<String>,
+        val price: Int,
+        val priceFormatted: String,
+        val properties: List<PropertyDetail>,
+        var text: String,
+        val title: String,
+        val userInfo: UserInfo
 )
 
 data class CategoryDetail(

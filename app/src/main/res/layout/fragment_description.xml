@@ -1,14 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <import type="android.text.Html"/>
+        <variable
+            name="vari"
+            type="com.arabam.android.assigment.model.DetailModel" />
+    </data>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/deneme"
+    android:id="@+id/denemedescription"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".view.DescriptionFragment">
 
     <TextView
+        android:id="@+id/denemeText"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="açıklama fragmenti" />
+        android:text="@{vari.text.toString()}"/>
 
 </FrameLayout>
+</layout>

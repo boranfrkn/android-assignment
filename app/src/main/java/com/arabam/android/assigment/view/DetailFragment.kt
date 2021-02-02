@@ -5,25 +5,30 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import com.arabam.android.assigment.R
+import com.arabam.android.assigment.adapter.ListRecyclerViewAdapter
+import com.arabam.android.assigment.databinding.FragmentDetailBinding
 import kotlinx.android.synthetic.main.fragment_detail.*
 
+var itemId = 0
 class DetailFragment : Fragment() {
-    private var itemId = 0
+    private lateinit var dataBinding : FragmentDetailBinding
+    private val recyclerViewListAdapter = ListRecyclerViewAdapter(arrayListOf())
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_detail, container, false)
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        dataBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_detail,container,false)
+        return dataBinding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         arguments?.let {
+            println("detailfragment argümanları aldı")
             itemId = DetailFragmentArgs.fromBundle(it).itemId
-            println(itemId)
         }
         childFragmentManager.beginTransaction().replace(R.id.fragmentHolder,AdDetailFragment()).commit()
         bottom_navigation.setOnNavigationItemSelectedListener {menuItem ->
