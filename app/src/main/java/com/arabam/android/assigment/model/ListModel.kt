@@ -1,31 +1,75 @@
 package com.arabam.android.assigment.model
 
+import androidx.room.ColumnInfo
+import androidx.room.Entity
+import androidx.room.PrimaryKey
+import com.google.gson.annotations.SerializedName
 
+
+@Entity()
 data class ListModel(
-    val category: Category,
+    @ColumnInfo(name = "category")
+    @SerializedName("category")
+    val category: CategoryList,
+    @ColumnInfo(name = "date")
+    @SerializedName("date")
     val date: String,
+    @ColumnInfo(name = "dateFormatted")
+    @SerializedName("dateFormatted")
     val dateFormatted: String,
-    var id: Int,
-    val location: Location,
+    @ColumnInfo(name = "id")
+    @SerializedName("id")
+    @PrimaryKey
+    var adGetId: Int,
+    @ColumnInfo(name = "location")
+    @SerializedName("location")
+    val location: LocationList,
+    @ColumnInfo(name = "modelName")
+    @SerializedName("modelName")
     val modelName: String,
+    @ColumnInfo(name = "photo")
+    @SerializedName("photo")
     val photo: String,
+    @ColumnInfo(name = "price")
+    @SerializedName("price")
     val price: Int,
+    @ColumnInfo(name = "priceFormatted")
+    @SerializedName("priceFormatted")
     val priceFormatted: String,
-    val properties: List<Property>,
+    /*@ColumnInfo(name = "properties")
+    @SerializedName("properties")
+    val properties: List<PropertyList>,*/
+    @ColumnInfo(name = "title")
+    @SerializedName("title")
     val title: String
 )
 
-data class Category(
+@Entity
+data class CategoryList(
+    @ColumnInfo(name = "id")
+    @SerializedName("id")
     val id: Int,
+    @ColumnInfo(name = "name")
+    @SerializedName("name")
     val name: String
 )
 
-data class Location(
+@Entity
+data class LocationList(
+    @ColumnInfo(name = "cityName")
+    @SerializedName("cityName")
     val cityName: String,
+    @ColumnInfo(name = "townName")
+    @SerializedName("townName")
     val townName: String
 )
 
-data class Property(
+/*@Entity
+data class PropertyList(
+    @ColumnInfo(name = "name")
+    @SerializedName("name")
     val name: String,
+    @ColumnInfo(name = "value")
+    @SerializedName("value")
     val value: String
-)
+)*/

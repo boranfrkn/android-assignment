@@ -30,7 +30,7 @@ class ListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProviders.of(this).get(AdListViewModel::class.java)
-        viewModel.loadData()
+        viewModel.refreshData()
         listRecyclerView.apply {
             listRecyclerView.layoutManager = LinearLayoutManager(context)
             listRecyclerView.adapter = recyclerViewListAdapter
