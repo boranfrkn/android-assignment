@@ -13,21 +13,18 @@ import kotlinx.android.synthetic.main.fragment_detail.*
 
 var itemId = 0
 class DetailFragment : Fragment() {
-    private lateinit var dataBinding : FragmentDetailBinding
-    private val recyclerViewListAdapter = ListRecyclerViewAdapter(arrayListOf())
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
-        dataBinding = DataBindingUtil.inflate(inflater,R.layout.fragment_detail,container,false)
-        return dataBinding.root
+        return inflater.inflate(R.layout.fragment_detail,container,false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         arguments?.let {
-            println("detailfragment argümanları aldı")
             itemId = DetailFragmentArgs.fromBundle(it).itemId
         }
         childFragmentManager.beginTransaction().replace(R.id.fragmentHolder,AdDetailFragment()).commit()

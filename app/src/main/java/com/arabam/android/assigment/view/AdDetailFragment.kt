@@ -11,7 +11,7 @@ import com.arabam.android.assigment.R
 import com.arabam.android.assigment.databinding.FragmentAdDetailBinding
 import com.arabam.android.assigment.viewmodel.AdDetailViewModel
 
-
+var text = ""
 class AdDetailFragment : Fragment() {
     private lateinit var viewModel : AdDetailViewModel
     private lateinit var dataBinding : FragmentAdDetailBinding
@@ -32,10 +32,15 @@ class AdDetailFragment : Fragment() {
         viewModel.loadDetail(itemId)
         observeLiveData()
     }
+
+
+
+
     fun observeLiveData(){
         viewModel.detail.observe(viewLifecycleOwner, androidx.lifecycle.Observer {
             it?.let {
-                dataBinding.deneme = it
+                dataBinding.detail = it
+                text = it.text
             }
         })
     }

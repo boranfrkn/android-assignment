@@ -1,5 +1,6 @@
 package com.arabam.android.assigment.viewmodel
 
+
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.arabam.android.assigment.model.ListModel
@@ -20,13 +21,12 @@ class AdListViewModel() : ViewModel(){
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(object : DisposableSingleObserver<List<ListModel>>(){
+                    override fun onError(e: Throwable) {
+                        e.printStackTrace()
+                    }
 
                     override fun onSuccess(t: List<ListModel>) {
                         list.value = t
-                    }
-
-                    override fun onError(e: Throwable) {
-                        e.printStackTrace()
                     }
                 })
         )
