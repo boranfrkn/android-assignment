@@ -1,22 +1,21 @@
 package com.arabam.android.assigment.util.Converters
 
 import androidx.room.TypeConverter
-//import com.arabam.android.assigment.model.PropertyList
-import org.json.JSONObject
+import com.arabam.android.assigment.model.PropertyList
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
 
-class PropertiesConverter {/*
+class PropertiesConverter {
     @TypeConverter
-    fun fromProperties(properties : PropertyList): String {
-        return JSONObject().apply {
-            put("name", properties.name)
-            put("value", properties.value)
-        }.toString()
+    fun fromProperties(properties : String): List<PropertyList> {
+        val type = object : TypeToken<List<PropertyList>>(){}.type
+        return Gson().fromJson(properties, type)
     }
     @TypeConverter
-    fun toProperties(properties: String) : PropertyList{
-        val json = JSONObject(properties)
-        return PropertyList(json.get("name") as String, json.get("value") as String)
+    fun toProperties(properties: List<PropertyList>) : String{
+        val type = object : TypeToken<List<PropertyList>>(){}.type
+        return Gson().toJson(properties, type)
     }
-    //Properties converter çalışmadı, yarın bu halledildikten sonra paging öğrenilecek.*/
+    //Properties converter çalışmadı, yarın bu halledildikten sonra paging öğrenilecek.
 }
 

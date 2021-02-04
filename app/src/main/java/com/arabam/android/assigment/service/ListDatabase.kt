@@ -10,9 +10,9 @@ import com.arabam.android.assigment.util.Converters.CategoryConverter
 import com.arabam.android.assigment.util.Converters.LocationConverter
 import com.arabam.android.assigment.util.Converters.PropertiesConverter
 
-@Database(entities = arrayOf(ListModel::class), version = 1)
-@TypeConverters(CategoryConverter::class, LocationConverter::class/*, PropertiesConverter::class*/)
-//var properties : List<PropertiesList>
+@Database(entities = arrayOf(ListModel::class), version = 2)
+@TypeConverters(CategoryConverter::class, LocationConverter::class, PropertiesConverter::class)
+
 abstract class ListDatabase : RoomDatabase(){
     abstract fun listDao() : ListDAO
 
@@ -24,6 +24,6 @@ abstract class ListDatabase : RoomDatabase(){
                 instance = it
             }
         }
-        private fun createDatabase(context: Context) = Room.databaseBuilder(context.applicationContext, ListDatabase::class.java, "listdatabase").build()
+        private fun createDatabase(context: Context) = Room.databaseBuilder(context.applicationContext, ListDatabase::class.java, "listdatabase").fallbackToDestructiveMigration().build()
     }
 }

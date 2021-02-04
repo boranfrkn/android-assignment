@@ -36,9 +36,9 @@ data class ListModel(
     @ColumnInfo(name = "priceFormatted")
     @SerializedName("priceFormatted")
     val priceFormatted: String,
-    /*@ColumnInfo(name = "properties")
+    @ColumnInfo(name = "properties")
     @SerializedName("properties")
-    val properties: List<PropertyList>,*/
+    val properties: List<PropertyList>,
     @ColumnInfo(name = "title")
     @SerializedName("title")
     val title: String
@@ -64,7 +64,7 @@ data class LocationList(
     val townName: String
 )
 
-/*@Entity
+@Entity
 data class PropertyList(
     @ColumnInfo(name = "name")
     @SerializedName("name")
@@ -72,4 +72,4 @@ data class PropertyList(
     @ColumnInfo(name = "value")
     @SerializedName("value")
     val value: String
-)*/
+)
