@@ -16,6 +16,5 @@ class PropertiesConverter {
         val type = object : TypeToken<List<PropertyList>>(){}.type
         return Gson().toJson(properties, type)
     }
-    //Properties converter çalışmadı, yarın bu halledildikten sonra paging öğrenilecek.
 }
 

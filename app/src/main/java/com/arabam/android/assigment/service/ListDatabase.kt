@@ -10,6 +10,7 @@ import com.arabam.android.assigment.util.Converters.CategoryConverter
 import com.arabam.android.assigment.util.Converters.LocationConverter
 import com.arabam.android.assigment.util.Converters.PropertiesConverter
 
+//PropertiesConverter eklendiği için version 2'ye çıkarıldı.
 @Database(entities = arrayOf(ListModel::class), version = 2)
 @TypeConverters(CategoryConverter::class, LocationConverter::class, PropertiesConverter::class)
 

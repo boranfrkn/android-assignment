@@ -10,6 +10,8 @@ import androidx.lifecycle.ViewModelProviders
 import com.arabam.android.assigment.R
 import com.arabam.android.assigment.databinding.FragmentAdDetailBinding
 import com.arabam.android.assigment.viewmodel.AdDetailViewModel
+import kotlinx.android.synthetic.main.fragment_ad_detail.*
+import kotlinx.android.synthetic.main.fragment_ad_detail.view.*
 
 var text = ""
 class AdDetailFragment : Fragment() {

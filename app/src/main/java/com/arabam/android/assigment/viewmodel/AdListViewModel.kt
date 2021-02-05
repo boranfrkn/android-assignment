@@ -2,7 +2,6 @@ package com.arabam.android.assigment.viewmodel
 
 
 import android.app.Application
-import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import com.arabam.android.assigment.model.ListModel
 import com.arabam.android.assigment.service.ArabamAPIService
@@ -16,7 +15,7 @@ import kotlinx.coroutines.launch
 
 class AdListViewModel(application: Application) : BaseViewModel(application){
     val list = MutableLiveData<List<ListModel>>()
-    private var updateTime = 5 * 60 * 1000 * 1000 * 1000L
+    var updateTime = 5 * 60 * 1000 * 1000 * 1000L
     private val apiService = ArabamAPIService()
     private val disposable = CompositeDisposable()
     private val specialSharedPreferences = SpecialSharedPreferences(getApplication())
@@ -34,7 +33,6 @@ class AdListViewModel(application: Application) : BaseViewModel(application){
         launch {
             val adList = ListDatabase(getApplication()).listDao().getAllList()
             showList(adList)
-            Toast.makeText(getApplication(),"Listeyi Room'dan aldık", Toast.LENGTH_LONG).show()
         }
     }
 
@@ -50,7 +48,6 @@ class AdListViewModel(application: Application) : BaseViewModel(application){
 
                     override fun onSuccess(t: List<ListModel>) {
                         saveSQLite(t)
-                        Toast.makeText(getApplication(),"Listeyi api'den aldık", Toast.LENGTH_LONG).show()
                     }
                 })
         )
