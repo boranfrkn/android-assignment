@@ -97,7 +97,7 @@ If you have questions, you can ask to us when you want or need to help. If there
   </p>
 <br/>
 <p align="center">
-<img src="https://media.giphy.com/media/l49JHz7kJvl6MCj3G/giphy.gif" width ="300" height="300"/>
+<img src="https://media.giphy.com/media/s98DvQYgtefdK12Km2/giphy.gif" width ="300" height="300"/>
 </p>
 
 
